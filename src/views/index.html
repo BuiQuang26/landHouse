@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <title>My web</title>
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-box">
+                <a href="/" class="logo-link"><span class="header-logo">LANDHOUSE</span></a>
+            </div>
+            <div class="header-box">
+                <ul class="header-navbar">
+                    <li class="header-navbar__items">
+                        <a href="mua-nha" class="navbar-items-link">Mua nhà</a>
+                    </li>
+                    <li class="header-navbar__items">
+                        <a href="#" class="navbar-items-link">About us</a>
+                    </li>
+                    <li class="header-navbar__items">
+                        <a href="#" class="navbar-items-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- main -->
+    <main class="main">
+        <!-- section top -->
+        <div class="h-main-container--top main-container--top">
+            <div class="h-main-box--top">
+                <div>
+                    <h1 class="main-heading color-white">MUA NHÀ Ở LANDHOUSE UY TÍN VÀ AN TÂM </h1>
+                    <p class="main-desc color-white">Mạng đến những sản phẩm bất động sản uy
+                                     tín chất lượng nhất</p>
+                </div>
+            </div>
+        </div>
+        <!-- top end -->
+        <div class="main-container">
+                <h3 class="main-title">Cập nhật mới</h3>
+                <div class="main-box">
+                    <ul class="list list-cart list--slick" id="root-list-newHomes">
+                        <!-- js render api -->
+                    </ul>
+                </div>
+        </div>
+        
+        <div class="main-container">
+            <h3 class="main-title">Khu vực</h3>
+            <div class="main-box">
+                <div class="list-slick-2">
+                    <div class="col-3">
+                        <a href="/mua-nha/tphcm" >
+                            <div class="home-img"
+                            style="background-image: url('./assets/img/tphcm_poster.jpg')">
+                                <span class="home-img__name">TP.HỒ CHÍ MINH</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="/mua-nha/nhatrang">
+                            <div class="home-img"
+                            style="background-image: url('./assets/img/nhatrang_poster.jpg')"
+                        >
+                            <span class="home-img__name">NHA TRANG</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="/mua-nha/vungtau" >
+                            <div class="home-img"
+                            style="background-image: url('./assets/img/vtau_poster.jpg')"
+                        >
+                            <span class="home-img__name">VŨNG TÀU</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-container">
+            <h3 class="main-title">Phân khúc</h3>
+            <div class="main-box">
+
+                <div class="list-slick-2">
+                    <div class="col-3">
+                        <a href="/mua-nha/nha-pho" >
+                            <div class="home-img"
+                                style="background-image: url('./assets/img/nhapho.jpg')">
+                                <span class="home-img__name">Nhà phố</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="/mua-nha/chung-cu" >
+                            <div class="home-img"
+                            style="background-image: url('./assets/img/chungCu.jpg')"
+                            >
+                                <span class="home-img__name">Chung cư</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="/mua-nha/khu-do-thi" >
+                            <div class="home-img"
+                            style="background-image: url('./assets/img/kdt.jpg')"
+                            >
+                                <span class="home-img__name">Khu đô thị</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <div class="row">
+                    <div class="col-5">
+                        <p class="footer-title">Liên Hệ</p>
+                        <ul class="list footer-list">
+                            <li class="footer-list__items">
+                                <i class="fas fa-mobile-alt"></i>
+                                <a href="" class="btn-link">
+                
+                                    0999696969
+                                </a>
+                            </li>
+                            <li class="footer-list__items">
+                                <i class="fas fa-envelope"></i>
+                                <a href="" class="btn-link">
+                                    landhouse@land.com
+                                </a>
+                            </li>
+                            <li class="footer-list__items">
+                                <i class="fab fa-facebook"></i>
+                                <a href="" class="btn-link">
+                                    Facebook/landHouse
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-5">
+                        <p class="footer-title">Chính sách</p>
+                        <ul class="list footer-list">
+                            <li class="footer-list__items">
+                                <a href="" class="btn-link">
+                                    Bảo hành 
+                                </a>
+                            </li>
+                            <li class="footer-list__items">
+                                <a href="" class="btn-link">
+                                    khuyễn mãi 
+                                </a>
+                            </li>
+                            <li class="footer-list__items">
+                                <a href="" class="btn-link">
+                                    Hỗ trợ tư vấn 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-box footer-box--bottom">
+                <p class="footer-text-slogen">
+                    @landHouse mua bán nhà uy tín, chất lượng đảm bảo 
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+      <script>
+          const listNewHomes = document.getElementById('root-list-newHomes');
+          fetch('/api/newHomes',{
+              method : "GET",
+          })
+          .then(Response=>Response.json())
+          .then(homes=>{
+              var listNewHomeHtml = homes.map(home=>{
+                  return `<li class="list-cart__items">
+                            <a href="/chi-tiet/${home.slug}">
+                                <img src="./${home.avatar}" alt="" class="cart-items__img">
+                                <div class="cart-items__info">
+                                    <p class="cart-name">${home.name}</p>
+                                    <p class="cart-price">Giá : ${home.price} VNĐ</p>
+                                    <p class="cart-location">Vị trí : ${home.location} </p>
+                                </div>
+                            </a>
+                        </li>`
+              })
+              listNewHomes.innerHTML = listNewHomeHtml.join('');
+                const widthPage = window.innerWidth;
+                let x;
+                if(widthPage < 768) {
+                    x = 1;
+                    x2 = 1;
+                }
+                else if(768 < widthPage && widthPage < 1024) {
+                    x = 2;
+                    x2 = 2;
+                }
+                else {
+                    x = 4;
+                    x2 = 3;
+                };
+                $('.list--slick').slick({
+                    infinite: true,
+                    slidesToShow: x,
+                    slidesToScroll: 1,
+                    infinite: false,
+                    prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style=""><i class="fas fa-chevron-right"></i></button>',
+                    nextArrow: '<button class="slick-next slick-arrow" aria-label="Previous" type="button" style=""><i class="fas fa-chevron-left"></i></button>',
+                    });
+                $('.list-slick-2').slick({
+                    infinite: true,
+                    slidesToShow: x2,
+                    slidesToScroll: 1,
+                    infinite: false,
+                    prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style=""><i class="fas fa-chevron-right"></i></button>',
+                    nextArrow: '<button class="slick-next slick-arrow" aria-label="Previous" type="button" style=""><i class="fas fa-chevron-left"></i></button>',
+                    });
+                })
+                
+          .catch(()=>{console.log("get api false!!!")})
+      </script>
+
+      <script type="text/javascript">
+            var lastScrollTop = 0;
+            window.onscroll = function(){
+                if(lastScrollTop < this.pageYOffset){
+                    $('.header').addClass('scroll-down');
+                }else{
+                    $('.header').removeClass('scroll-down');
+                }
+                lastScrollTop = this.pageYOffset;
+            }
+      </script>
+</body>
+</html>

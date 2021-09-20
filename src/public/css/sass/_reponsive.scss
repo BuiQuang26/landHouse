@@ -1,0 +1,131 @@
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 768px) {
+    html{
+        font-size: 50%;
+    }
+
+    .main-container{
+        padding: 4px 8px;
+    }
+
+    .row{
+        flex-direction: column;
+        margin: 0;
+    }
+    
+    .col-4-cart{
+        width: 100%;
+    }
+
+    .cart-content{
+        margin: 12px 0 0;
+    }
+
+    .slick-prev{
+        right: -4px;
+    }
+    
+    .slick-next{
+        left: -4px;
+    }
+
+    .navbar-path{
+        margin: 12px 0;
+    }
+
+    // home page
+    .h-main-container--top{
+        height: 30vh;
+    }
+
+    .h-main-container--top .main-heading{
+        font-size: 1.6rem;
+    }
+
+    .header-container{
+        padding: 0 8px;
+    }
+
+    .header-logo{
+        font-size: 2rem;
+        margin-right: 12px;
+    }
+
+    .header-navbar{
+        padding: 0;
+    }
+
+// show all
+    .navbar-fillter{
+        width: 100%;
+        padding: 4px 0;
+        border-radius: 0;
+    }
+    
+    .form-search{
+        width: 100%;
+        margin: 0 8px;
+    }
+
+    .navbar-dropdown__label{
+        font-size: 1.4rem;
+        margin: 0 0 6px;
+        display: block;
+    }
+
+    .dropdown-list__items{
+        min-width: 80px;
+    }
+
+    // details 
+    .home-control{
+        flex-direction: column;
+    }
+
+    .slider-for .slider__items img{
+        height: 28vh;
+    }
+
+    .home-control-btn{
+        font-size: 2rem;
+    }
+
+    // admin 
+    table td .btn{
+        font-size: 2rem;
+        margin: 8px;
+        display: block;
+    }
+
+    .modal-delete__notification{
+        width: 80%;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .h-main-container--top{
+        height: 30vh;
+    }
+
+    .navbar-fillter{
+        width: 100%;
+        padding: 4px 0;
+        border-radius: 0;
+    }
+
+    .navbar-dropdown__label{
+        font-size: 1.4rem;
+        margin: 0 0 6px;
+        display: block;
+    }
+
+    .col-4-cart{
+        width: 50%;
+    }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1024px) {
+}

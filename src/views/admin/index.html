@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-box">
+                <a href="/" class="logo-link"><span class="header-logo">LANDHOUSE</span></a>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+
+    <main>
+        <div class="main-container main-container--top">
+            <div class=" row row--s-b">
+                <div class="main-box navbar-path ">
+                    <a href="/" class="btn btn-link">Trang chủ</a>/
+                    <span class="btn btn-link active">admin</span>
+                </div>
+                <a href="/admin/up-home" class="btn btn-md btn-primary">them nha</a>
+            </div>
+        </div>
+        <div class="main-container">
+           <h3 class="main-heading">Quản lý nhà bán</h3>
+           <div class="navbar-filter-container">
+            <div class="navbar-fillter-admin">
+                <ul class="list row-nav-filter">
+                    <li class="col-4 navbar-list__items " id="fiter-location">
+                        <div  class="navbar-dropdown" >
+                            <span class="navbar-dropdown__label">Khu vuc <i class="fas fa-caret-down"></i></span>
+                            <ul class="navbar-dropdown__list">
+                                <li class="dropdown-list__items" >
+                                    <p class="dropdown-selector__name" data-value="all"  >Tất cả</p>
+                                </li>
+                                <li class="dropdown-list__items" >
+                                    <p class="dropdown-selector__name" data-value="tphcm" >TP Hồ Chí Minh</p>
+                                </li>
+                                <li class="dropdown-list__items" >
+                                    <p class="dropdown-selector__name" data-value="nt" >Nha Trang</p>
+                                </li>
+                                <li class="dropdown-list__items" >
+                                    <p class="dropdown-selector__name" data-value="vt" >Vũng Tàu</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="items__name">Tất cả</span>
+                    </li>
+                    <div class="separate-white"></div>
+                    <li class="col-4 navbar-list__items" id="land-type">
+                        <div class="navbar-dropdown">
+                            <span class="navbar-dropdown__label">Loại nhà đất <i class="fas fa-caret-down"></i></span>
+                            <ul class="navbar-dropdown__list">
+                                <li class="dropdown-list__items">
+                                    <p class="dropdown-selector__name" data-value="all" >Tất cả</p>
+                                </li>
+                                <li class="dropdown-list__items">
+                                    <p class="dropdown-selector__name" data-value="np" >Nhà phố</p>
+                                </li>
+                                <li class="dropdown-list__items">
+                                    <p class="dropdown-selector__name" data-value="cc" >Chung cư</p>
+                                </li>
+                                <li class="dropdown-list__items">
+                                    <p class="dropdown-selector__name" data-value="kdt" >Khu đô thị</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="items__name">Tất cả</span>
+                    </li>
+                    <div class="separate-white"></div>
+                    <li class="col-4 navbar-list__items" id="price">
+                        <div class="navbar-dropdown">
+                            <span class="navbar-dropdown__label">Mức giá <i class="fas fa-caret-down"></i></span>
+                            <ul class="navbar-dropdown__list">
+                                <li class="dropdown-list__items">
+                                    <p class="dropdown-selector__name" data-value="all" >Tất cả</p>
+                                </li>
+                                <li class="dropdown-list__items">
+                                    <p class="dropdown-selector__name" data-value="-1ty" >Dưới 1 tỷ</p>
+                                </li>
+                                <li class="dropdown-list__items">
+                                    <p class="dropdown-selector__name" data-value="1+3ty" >1 đến 3 tỷ</p>
+                                </li>
+                                <li class="dropdown-list__items">
+                                    <p class="dropdown-selector__name" data-value="+3ty" >trên 3 tỷ</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="items__name">Tất cả</span>
+                    </li>
+                    <div class="separate-white"></div>
+                    <li class="col-4 navbar-list__items" id="area">
+                        <div class="navbar-dropdown">
+                            <span class="navbar-dropdown__label">Diện tích <i class="fas fa-caret-down"></i></span>
+                            <ul class="navbar-dropdown__list">
+                                <li class="dropdown-list__items">
+                                    <p class="dropdown-selector__name" data-value="all" >Tất cả</p>
+                                </li>
+                                <li class="dropdown-list__items">
+                                    <p class="dropdown-selector__name" data-value="-1000" >dưới 1000m2</p>
+                                </li>
+                                <li class="dropdown-list__items">
+                                    <p class="dropdown-selector__name" data-value="1000+2000" >1000 đến 2000m2</p>
+                                </li>
+                                <li class="dropdown-list__items">
+                                    <p class="dropdown-selector__name" data-value="+2000" >trên 2000m2</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="items__name">Tất cả</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            <table class="table-list-movie">
+                <thead>
+                    <tr class="thead">
+                        <th>STT</th>
+                        <th>Name</th>
+                        <th>Giá</th>
+                        <th>Địa chỉ</th>
+                        <th>Tình trạng</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="tboby-list-home">
+                    <!-- js render api -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="modal-delete modal-disable">
+            <div class="modal-bg"></div>
+            <div class="modal-delete__notification">
+                <h3 class="notification__title">Xóa nhà bán !!!</h3>
+                <p class="notification__desc">Bạn chắc chắn muốn xóa bài đăng bán nhà này ?</p>
+
+                <button class="btn btn-modal btn-danger btn-delete-submit">Xóa</button>
+                <button class="btn btn-modal btn-primary btn-modal-close">Hủy bỏ</button>
+            </div>
+        </div>
+    </main>
+    <form action="" class="form-delete-home"></form>
+    <script>
+        const boxCartElement = document.getElementById('tboby-list-home');
+
+        var data = {
+            location: 'all',
+            typeLand: 'all',
+            price: 'all',
+            area: 'all',
+            search: '',
+        }
+
+        var getHomes = function(data,eleRoot){
+                fetch( '/api/get/homes', {
+                    method: 'POST', // or 'PUT'
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                }
+                )
+                .then((response) => response.json())
+                .then(homes=>{
+                    let listCartHtml = homes.map((home,index)=>{
+                        switch (home.type){
+                            case 'np': 
+                                home.type = 'nhà phố';
+                                break;
+                            case 'cc':
+                                home.type = 'chung cư';
+                                break;
+                            case 'kdt':
+                                home.type = 'khu đô thị';
+                                break;
+                        }
+                        return `<tr>
+                                    <td>${index+1}</td>
+                                    <td>${home.name}</td>
+                                    <td>${home.price}VNĐ</td>
+                                    <td>${home.location}</td>
+                                    <td>${home.status}</td>
+                                    <td>
+                                        <a href="/admin/update/${home.slug}" class="btn btn-link">sửa</a>
+                                        <a class="btn btn-link btn-delete-home" data-id="${home._id}">xóa</a>
+                                    </td>
+                                </tr>`
+                    })
+                        boxCartElement.innerHTML = listCartHtml.join('');
+
+                        //  modal delete 
+                        const modalDelete = document.querySelector('.modal-delete');
+                        const btnCloseModal = document.querySelector('.btn-modal-close');
+                        const btnDeleteSubmit = document.querySelector('.btn-delete-submit')
+                        let btnDeleteHome = document.querySelectorAll('.btn-delete-home');
+                        const modalBg = document.querySelector('.modal-bg');
+                        const formDeleteHome = document.querySelector('.form-delete-home');
+                        
+                        btnDeleteHome = Array.from(btnDeleteHome);
+                        btnDeleteHome.forEach(btn=>{
+                            btn.onclick = function(e){
+                                e.stopPropagation();
+                                modalDelete.classList.remove('modal-disable');
+                                btnDeleteSubmit.setAttribute('data-id', e.target.getAttribute('data-id'));
+                            }
+                        })
+                        btnCloseModal.onclick=()=>{
+                            modalDelete.classList.add('modal-disable');
+                        }
+                        modalBg.onclick = () =>{
+                            modalDelete.classList.add('modal-disable');
+                        }
+                        btnDeleteSubmit.onclick = function(){
+                            const idHome = this.getAttribute('data-id');
+                            formDeleteHome.action = "/admin/delete/" + idHome + '?_method=DELETE';
+                            formDeleteHome.method = "POST";
+                            formDeleteHome.submit();
+                        }
+                })
+            }
+
+        document.addEventListener('DOMContentLoaded', function(){
+        const navbarFillterContainer = document.querySelector('.navbar-filter-container');
+        var lastScrollTop = 0;
+        window.onscroll = function(){
+            if(this.pageYOffset >= 70){
+                navbarFillterContainer.classList.add('navbar-fillter--up');
+            }else{
+                navbarFillterContainer.classList.remove('navbar-fillter--up');
+            }
+        }
+
+        // location
+        var btnFiterLocations = document.querySelectorAll('#fiter-location .dropdown-selector__name');
+        const itemNameLocation = document.querySelector('#fiter-location .items__name');
+        const DropdownLocation = document.querySelector('#fiter-location .navbar-dropdown');
+        const listDropdownLocation = document.querySelector('#fiter-location .navbar-dropdown__list');
+
+        DropdownLocation.onclick = (e)=>{
+            e.stopPropagation();
+            listDropdownLocation.style.display = 'block';
+        }
+        window.onclick = ()=>{
+            listDropdownLocation.style.display = 'none';
+            listDropdownArea.style.display = 'none';
+            listDropdownType.style.display = 'none';
+            listDropdownPrice.style.display = 'none';
+        }
+        btnFiterLocations = Array.from(btnFiterLocations)
+        btnFiterLocations.forEach(btnFilter=>{
+            btnFilter.onclick = function(e){
+                e.stopPropagation();
+                data.location = e.target.getAttribute('data-value');
+                var locationName = '' ;
+                if(data.location === 'tphcm')  locationName = 'TP Hồ Chí Minh';
+                else if(data.location === 'vt')  locationName = 'Vũng Tàu';
+                else if(data.location === 'nt')  locationName = 'Nha Trang';
+                else if(data.location === 'all')  locationName = 'Tất cả';
+
+                itemNameLocation.innerText = locationName;
+                listDropdownLocation.style.display = 'none';
+                getHomes(data)
+            }
+        })
+        // land type
+        var btnFiterTypes = document.querySelectorAll('#land-type .dropdown-selector__name');
+        const itemNameType = document.querySelector('#land-type .items__name');
+        const DropdownType = document.querySelector('#land-type .navbar-dropdown');
+        const listDropdownType = document.querySelector('#land-type .navbar-dropdown__list');
+
+        DropdownType.onclick = (e)=>{
+        e.stopPropagation();
+        listDropdownType.style.display = 'block';
+        }
+
+        btnFiterTypes = Array.from(btnFiterTypes)
+
+        btnFiterTypes.forEach(btnFilter=>{
+        btnFilter.onclick = function(e){
+            e.stopPropagation();
+            data.typeLand = e.target.getAttribute('data-value');
+            var TypeName = '' ;
+            if(data.typeLand === 'np')  TypeName = 'Nhà phố';
+            else if(data.typeLand === 'cc')  TypeName = 'Chung cư';
+            else if(data.typeLand === 'kdt')  TypeName = 'Khu đô thị';
+            else if(data.typeLand === 'all')  TypeName = 'Tất cả';
+
+            itemNameType.innerText = TypeName;
+            listDropdownType.style.display = 'none';
+            getHomes(data)
+        }
+        })
+
+        // price
+        var btnFiterPrices = document.querySelectorAll('#price .dropdown-selector__name');
+        const itemNamePrice = document.querySelector('#price .items__name');
+        const DropdownPrice = document.querySelector('#price .navbar-dropdown');
+        const listDropdownPrice = document.querySelector('#price .navbar-dropdown__list');
+
+        DropdownPrice.onclick = (e)=>{
+        e.stopPropagation();
+        listDropdownPrice.style.display = 'block';
+        }
+
+        btnFiterPrices = Array.from(btnFiterPrices)
+
+        btnFiterPrices.forEach(btnFilter=>{
+        btnFilter.onclick = function(e){
+            e.stopPropagation();
+            data.price = e.target.getAttribute('data-value');
+            var PriceName = '' ;
+            if(data.price === '-1ty')  PriceName = 'Dưới 1 tỷ';
+            else if(data.price === '1+3ty')  PriceName = '1 đến 3 tỷ';
+            else if(data.price === '+3ty')  PriceName = 'trên 3 tỷ';
+            else if(data.price === 'all')  PriceName = 'Tất cả';
+
+            itemNamePrice.innerText = PriceName;
+            listDropdownPrice.style.display = 'none';
+            getHomes(data)
+        }
+        })
+
+        // area
+        var btnFiterAreas = document.querySelectorAll('#area .dropdown-selector__name');
+        const itemNameArea = document.querySelector('#area .items__name');
+        const DropdownArea = document.querySelector('#area .navbar-dropdown');
+        const listDropdownArea = document.querySelector('#area .navbar-dropdown__list');
+
+        DropdownArea.onclick = (e)=>{
+        e.stopPropagation();
+        listDropdownArea.style.display = 'block';
+        }
+
+        btnFiterAreas = Array.from(btnFiterAreas)
+
+        btnFiterAreas.forEach(btnFilter=>{
+        btnFilter.onclick = function(e){
+            e.stopPropagation();
+            data.area = e.target.getAttribute('data-value');
+            var AreaName = '' ;
+            if(data.area === '-1000')  AreaName = 'Dưới 1000m2';
+            else if(data.area === '1000+2000')  AreaName = '1000 đến 2000m2';
+            else if(data.area === '+2000')  AreaName = 'trên 3000m2';
+            else if(data.area === 'all')  AreaName = 'Tất cả';
+
+            itemNameArea.innerText = AreaName;
+            listDropdownArea.style.display = 'none';
+            getHomes(data);
+        }
+        })
+        getHomes(data);
+})
+    </script>
+
+</body>
+</html>

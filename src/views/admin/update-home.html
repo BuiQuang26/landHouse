@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/app.css">
+    <link rel="stylesheet" href="../../assets/fontawesome/css/all.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="main-box navbar-path">
+            <a href="/admin" class="btn btn-link">admin</a>/
+            <span class="btn btn-link active">Sửa bài đăng</span>
+        </div>
+    </div>
+    <div class="main-container container--flex-centr" id="form-update">
+        <form action="/update/" class="form-up-home" method="post" enctype="multipart/form-data"> 
+            <h3 class="form-heading">Sửa bài đăng nhà Cần bán</h3>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">Tên</label>
+                <input type="text" class="form-input" name="name" placeholder=" Sửa tên ... ">
+            </div>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">TP/Tỉnh</label>
+                <select type="text" class="form-input" name="city" >
+                    <option value="tphcm"  >TP HCM</option>
+                    <option value="nt" >Nha Trang</option>
+                    <option value="vt">Vung Tau</option>
+                </select>
+            </div>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">Địa chỉ chi tiết</label>
+                <input type="text" class="form-input" name="location" placeholder="Địa chỉ chi tiết...">
+            </div>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">Giá bán (VNĐ):  </label>
+                <input type="text" class="form-input" name="price" placeholder=" Giá... ">
+            </div>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">Loại nhà đất</label>
+                <select class="form-input" name="type" >
+                    <option value="cc">Chung cu</option>
+                    <option value="np">nha pho</option>
+                    <option value="kdt">khu do thi</option>
+                </select>
+            </div>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">Diện tích(m2): </label>
+                <input type="text" class="form-input" name="area" placeholder=" Diện tích ... ">
+            </div>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">Ảnh Poster:  </label>
+                <input type="file" class="form-input" name="avatar" >
+            </div>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">hình ảnh miêu tả:(tối thiểu 5 ảnh)  </label>
+                <input type="file" class="form-input" name="gallery" multiple="multiple">
+            </div>
+
+            <button class="btn btn-form">Lưu lại</button>
+        </form>
+    </div>
+
+    <script>
+        const formUpdateContainer = document.getElementById('form-update');
+        var pathUrl = window.location.pathname;
+        var arrayURL = pathUrl.split('/');
+        var slug = arrayURL[arrayURL.length - 1];
+        fetch('/api/chi-tiet/'+ slug, {
+            method : 'POST',
+        })
+        .then(response=>response.json())
+        .then(home=>{
+            var isText = function(value, keyWorld){
+                return value.toLowerCase().indexOf(keyWorld) > -1 ? true : false;
+            }
+            var contentHtml = `<form action="/admin/update/${home.slug}?_method=PUT" class="form-up-home" method="post" enctype="multipart/form-data"> 
+                                    <h3 class="form-heading">Sửa bài đăng nhà Cần bán</h3>
+                                    <div class="form-groupt form-flex-col">
+                                        <label for="" class="form-label">Tên</label>
+                                        <input type="text" class="form-input" name="name" value="${home.name}">
+                                    </div>
+                                    <div class="form-groupt form-flex-col">
+                                        <label for="" class="form-label">TP/Tỉnh</label>
+                                        <select type="text" class="form-input" name="city" >
+                                            <option value="tphcm" ${isText(home.location,'tphcm') ? 'selected' : ''}>TP HCM</option>
+                                            <option value="nt" ${isText(home.location,'nt') ? 'selected' : ''}>Nha Trang</option>
+                                            <option value="vt" ${isText(home.location,'vt') ? 'selected' : ''}>Vung Tau</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-groupt form-flex-col">
+                                        <label for="" class="form-label">Địa chỉ chi tiết</label>
+                                        <input type="text" class="form-input" name="location" value="${home.location}">
+                                    </div>
+                                    <div class="form-groupt form-flex-col">
+                                        <label for="" class="form-label">Giá bán (VNĐ):  </label>
+                                        <input type="text" class="form-input" name="price" placeholder=" Giá... " value="${home.price}">
+                                    </div>
+                                    <div class="form-groupt form-flex-col">
+                                        <label for="" class="form-label">Loại nhà đất</label>
+                                        <select class="form-input" name="type" >
+                                            <option value="cc" ${isText(home.type,'cc') ? 'selected' : ''}>Chung cu</option>
+                                            <option value="np" ${isText(home.type,'np') ? 'selected' : ''}>nha pho</option>
+                                            <option value="kdt" ${isText(home.type,'kdt') ? 'selected' : ''}>khu do thi</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-groupt form-flex-col">
+                                        <label for="" class="form-label">Diện tích(m2): </label>
+                                        <input type="text" class="form-input" name="area" placeholder=" Diện tích ... " value="${home.area}">
+                                    </div>
+                                    <div class="form-groupt form-flex-col">
+                                        <label for="" class="form-label">Thay đổi ảnh Poster:  </label>
+                                        <input type="file" class="form-input" name="avatar" >
+                                    </div>
+
+                                    <button class="btn btn-form">Lưu lại</button>
+                                </form>`
+            formUpdateContainer.innerHTML =  contentHtml;
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <title>My web</title>
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-box">
+                <a href="/" class="logo-link"><span class="header-logo">LANDHOUSE</span></a>
+            </div>
+            <form class="form-search form-search--border" id="form-search">
+                <div class="form-groupt">
+                    <input type="text" class="form-groupt__input" placeholder="Tìm kiếm ...">
+                    <button class="btn-search"><i class="fas fa-search "></i></button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+    <!-- main -->
+    <main class="main">
+        <div class="main-container main-container--top">
+            <div class="main-box navbar-path">
+                <a href="/" class="btn btn-link">Trang chủ</a>/
+                <span class="btn btn-link active">Mua nhà</span>
+                <span class="content-text-search hidden" id="text-search-box"></span>
+            </div>
+        </div>
+        <div style="height: 42px;">
+            <div class="navbar-filter-container">
+                <div class="navbar-fillter">
+                    <ul class="list row-nav-filter">
+                        <li class="col-4 navbar-list__items " id="fiter-location">
+                            <div  class="navbar-dropdown" >
+                                <span class="navbar-dropdown__label">Khu vuc <i class="fas fa-caret-down"></i></span>
+                                <ul class="navbar-dropdown__list">
+                                    <li class="dropdown-list__items" >
+                                        <p class="dropdown-selector__name" data-value="all"  >Tất cả</p>
+                                    </li>
+                                    <li class="dropdown-list__items" >
+                                        <p class="dropdown-selector__name" data-value="tphcm" >TP Hồ Chí Minh</p>
+                                    </li>
+                                    <li class="dropdown-list__items" >
+                                        <p class="dropdown-selector__name" data-value="nt" >Nha Trang</p>
+                                    </li>
+                                    <li class="dropdown-list__items" >
+                                        <p class="dropdown-selector__name" data-value="vt" >Vũng Tàu</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="items__name">Tất cả</span>
+                        </li>
+                        <div class="separate-white"></div>
+                        <li class="col-4 navbar-list__items" id="land-type">
+                            <div class="navbar-dropdown">
+                                <span class="navbar-dropdown__label">Loại nhà đất <i class="fas fa-caret-down"></i></span>
+                                <ul class="navbar-dropdown__list">
+                                    <li class="dropdown-list__items">
+                                        <p class="dropdown-selector__name" data-value="all" >Tất cả</p>
+                                    </li>
+                                    <li class="dropdown-list__items">
+                                        <p class="dropdown-selector__name" data-value="np" >Nhà phố</p>
+                                    </li>
+                                    <li class="dropdown-list__items">
+                                        <p class="dropdown-selector__name" data-value="cc" >Chung cư</p>
+                                    </li>
+                                    <li class="dropdown-list__items">
+                                        <p class="dropdown-selector__name" data-value="kdt" >Khu đô thị</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="items__name">Tất cả</span>
+                        </li>
+                        <div class="separate-white"></div>
+                        <li class="col-4 navbar-list__items" id="price">
+                            <div class="navbar-dropdown">
+                                <span class="navbar-dropdown__label">Mức giá <i class="fas fa-caret-down"></i></span>
+                                <ul class="navbar-dropdown__list">
+                                    <li class="dropdown-list__items">
+                                        <p class="dropdown-selector__name" data-value="all" >Tất cả</p>
+                                    </li>
+                                    <li class="dropdown-list__items">
+                                        <p class="dropdown-selector__name" data-value="-1ty" >Dưới 1 tỷ</p>
+                                    </li>
+                                    <li class="dropdown-list__items">
+                                        <p class="dropdown-selector__name" data-value="1+3ty" >1 đến 3 tỷ</p>
+                                    </li>
+                                    <li class="dropdown-list__items">
+                                        <p class="dropdown-selector__name" data-value="+3ty" >trên 3 tỷ</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="items__name">Tất cả</span>
+                        </li>
+                        <div class="separate-white"></div>
+                        <li class="col-4 navbar-list__items" id="area">
+                            <div class="navbar-dropdown">
+                                <span class="navbar-dropdown__label">Diện tích <i class="fas fa-caret-down"></i></span>
+                                <ul class="navbar-dropdown__list">
+                                    <li class="dropdown-list__items">
+                                        <p class="dropdown-selector__name" data-value="all" >Tất cả</p>
+                                    </li>
+                                    <li class="dropdown-list__items">
+                                        <p class="dropdown-selector__name" data-value="-1000" >dưới 1000m2</p>
+                                    </li>
+                                    <li class="dropdown-list__items">
+                                        <p class="dropdown-selector__name" data-value="1000+2000" >1000 đến 2000m2</p>
+                                    </li>
+                                    <li class="dropdown-list__items">
+                                        <p class="dropdown-selector__name" data-value="+2000" >trên 2000m2</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="items__name">Tất cả</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="row">
+                <div class="main-box-showCart">
+                    <div class="list-cart-container">
+                        <div class="row row--f-wrap" id="box-cart-homes">
+                            <!-- js render data -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <div class="row">
+                    <div class="col-5">
+                        <p class="footer-title">Liên Hệ</p>
+                        <ul class="list footer-list">
+                            <li class="footer-list__items">
+                                <i class="fas fa-mobile-alt"></i>
+                                <a href="" class="btn-link">
+                
+                                    0999696969
+                                </a>
+                            </li>
+                            <li class="footer-list__items">
+                                <i class="fas fa-envelope"></i>
+                                <a href="" class="btn-link">
+                                    landhouse@land.com
+                                </a>
+                            </li>
+                            <li class="footer-list__items">
+                                <i class="fab fa-facebook"></i>
+                                <a href="" class="btn-link">
+                                    Facebook/landHouse
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-5">
+                        <p class="footer-title">Chính sách</p>
+                        <ul class="list footer-list">
+                            <li class="footer-list__items">
+                                <a href="" class="btn-link">
+                                    Bảo hành 
+                                </a>
+                            </li>
+                            <li class="footer-list__items">
+                                <a href="" class="btn-link">
+                                    khuyễn mãi 
+                                </a>
+                            </li>
+                            <li class="footer-list__items">
+                                <a href="" class="btn-link">
+                                    Hỗ trợ tư vấn 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-box footer-box--bottom">
+                <p class="footer-text-slogen">
+                    @landHouse mua bán nhà uy tín, chất lượng đảm bảo 
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/showAll.js"></script>
+</body>
+</html>

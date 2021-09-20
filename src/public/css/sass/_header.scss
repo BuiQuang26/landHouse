@@ -1,0 +1,60 @@
+.header{
+    background-color: #fff;
+    border-bottom: 1px solid #f3f3f3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    transition: all ease .2s;
+}
+
+.header-container{
+    display:flex;
+    max-width: 1356px;
+    height: 72px;
+    margin: auto;
+    padding: 0 24px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-box{
+    display: flex;
+    align-items: baseline;
+}
+
+.header-logo{
+    font-size:3.6rem;
+    font-weight: 700;
+    color: #33595a;
+}
+
+.logo-link{
+    text-decoration: none;
+}
+
+.header-navbar{
+    display: flex;
+    list-style: none;
+    padding: 0 12px;
+}
+
+.header-navbar__items{
+    margin: 0 12px;
+}
+
+.header .navbar-items-link{
+    font-size: 1.6rem;
+    font-weight:500;
+    text-decoration: none;
+    color: #686868;
+}
+
+.header .navbar-items-link:hover{
+    color: rgb(206, 84, 2);
+}
+
+.header .form-search-header{
+    border: 1px solid #ccc;
+}

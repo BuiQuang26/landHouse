@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="main-box navbar-path">
+            <a href="/admin" class="btn btn-link">admin</a>/
+            <span class="btn btn-link active">thêm nhà</span>
+        </div>
+    </div>
+    <div class="main-container container--flex-centr">
+        <form action="" class="form-up-home" method="post" enctype="multipart/form-data"> 
+            <h3 class="form-heading">Thêm nhà Cần bán</h3>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">Thêm tên</label>
+                <input type="text" class="form-input" name="name" placeholder=" Thêm tên ... ">
+            </div>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">TP/Tỉnh</label>
+                <select type="text" class="form-input" name="city" >
+                    <option value="tphcm">TP HCM</option>
+                    <option value="nt">Nha Trang</option>
+                    <option value="vt">Vung Tau</option>
+                </select>
+            </div>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">Địa chỉ chi tiết</label>
+                <input type="text" class="form-input" name="location" placeholder="Địa chỉ chi tiết...">
+            </div>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">Giá bán (VNĐ):  </label>
+                <input type="text" class="form-input" name="price" placeholder=" Giá... ">
+            </div>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">Loại nhà đất</label>
+                <select class="form-input" name="type" >
+                    <option value="cc">Chung cu</option>
+                    <option value="np">nha pho</option>
+                    <option value="kdt">khu do thi</option>
+                </select>
+            </div>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">Diện tích(m2): </label>
+                <input type="text" class="form-input" name="area" placeholder=" Diện tích ... ">
+            </div>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">Ảnh Poster:  </label>
+                <input type="file" class="form-input" name="avatar" >
+            </div>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">hình ảnh miêu tả:(tối thiểu 5 ảnh)  </label>
+                <input type="file" class="form-input" name="gallery" multiple="multiple">
+            </div>
+
+            <button class="btn btn-form">Thêm nhà</button>
+        </form>
+    </div>
+</body>
+</html>
