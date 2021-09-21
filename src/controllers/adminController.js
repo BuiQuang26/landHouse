@@ -32,7 +32,7 @@ class adminController{
         var home = new Home(newHome);
         home.save()
             .then(()=>{
-                res.redirect('back');
+                res.redirect('/admin');
             })
             .catch(err=>{res.status(500).json({message: 'loi server ' + err})});
     }
@@ -52,7 +52,6 @@ class adminController{
                         const oldAvatarUrl = path.dirname(__dirname) + '/public/' + home.avatar;
                         fs.unlink(oldAvatarUrl, function(err){
                             if(err) throw err;
-                            console.log('delete success')
                         })
                     }
                 })
@@ -73,7 +72,6 @@ class adminController{
     // [DELETE] /admin/delete/:id
     deleteHome(req,res,next){
         let idHome = req.params.id;
-        console.log(idHome)
         
         Home.deleteOne({_id: idHome})
             .then(()=>{
