@@ -26,7 +26,7 @@ class adminController{
                return `uploads/${img.filename}`;
            });
         }
-        req.body.location = `${req.body.location},${req.body.city}`;
+        req.body.location = `${req.body.location}[ ${req.body.city} ]`;
         
         var newHome ={...req.body, avatar, gallery};
         var home = new Home(newHome);
@@ -48,11 +48,13 @@ class adminController{
         if(req.file){
             Home.findOne({slug: slug})
                 .then(home=>{
-                    const oldAvatarUrl = path.dirname(__dirname) + '/public/' + home.avatar;
-                    fs.unlink(oldAvatarUrl, function(err){
-                        if(err) throw err;
-                        console.log('delete success')
-                    })
+                    if(home.avatar){
+                        const oldAvatarUrl = path.dirname(__dirname) + '/public/' + home.avatar;
+                        fs.unlink(oldAvatarUrl, function(err){
+                            if(err) throw err;
+                            console.log('delete success')
+                        })
+                    }
                 })
             var avatar = `uploads/${req.file.filename}`;
             newHome = {...req.body, avatar}

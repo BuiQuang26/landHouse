@@ -3,7 +3,7 @@ const router = express.Router();
 const adminController = require('../controllers/adminController');
 const path = require('path');
 const multer  = require('multer');
-const storage = multer.diskStorage({
+var storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, path.dirname(__dirname) + '/public/uploads')
     },
@@ -29,9 +29,11 @@ function removeImg(req,res,next){
     Home.findOne({_id: idHome})
         .then(home=>{
             const oldAvatarUrl = path.dirname(__dirname) + '/public/' + home.avatar;
-            fs.unlink(oldAvatarUrl, function(err){
-                if(err) throw err;
-            })
+            if(home.avatar){
+                fs.unlink(oldAvatarUrl, function(err){
+                    if(err) throw err;
+                })
+            }
             if(home.gallery.length !== 0){
                 var oldImgGallery = home.gallery.map(imgUrl=>{
                     return path.dirname(__dirname) + '/public/' + imgUrl;

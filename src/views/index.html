@@ -243,7 +243,7 @@
       <script type="text/javascript">
             var lastScrollTop = 0;
             window.onscroll = function(){
-                if(lastScrollTop < this.pageYOffset){
+                if(lastScrollTop < this.pageYOffset && this.pageYOffset > 0){
                     $('.header').addClass('scroll-down');
                 }else{
                     $('.header').removeClass('scroll-down');
