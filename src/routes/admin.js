@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const adminController = require('../controllers/adminController');
+const auth = require("../controllers/auth");
 const path = require('path');
 const multer  = require('multer');
 var storage = multer.diskStorage({
@@ -15,8 +16,10 @@ var storage = multer.diskStorage({
 
   const upload = multer({ storage: storage })
 
-router.get('/',adminController.index)
-router.get('/up-home',adminController.upHome)
+router.get('/manage',auth.isadmin,adminController.index)
+router.get('/',adminController.login)
+router.post('/',adminController.isPassword)
+router.get('/up-home',auth.isadmin,adminController.upHome)
 router.post('/up-home', upload.fields([{ name: 'avatar', maxCount: 1 }, { name: 'gallery'}]) ,adminController.saveHome)
 router.get('/update/:slug',adminController.updateHome);
 router.put('/update/:slug',upload.single('avatar'),adminController.updateHomeSave);

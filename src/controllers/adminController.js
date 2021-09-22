@@ -2,12 +2,39 @@ const path = require('path');
 const fs = require('fs');
 const Home = require('../models/home');
 const { throws } = require('assert');
+const jwt = require('jsonwebtoken');
+
+
+
+const admin={
+        name: 'admin',
+}
 
 class adminController{
 
+
     // [GET] /admin/
+    login(req,res,next){
+        res.sendFile(path.dirname(__dirname) + '/views/admin/login.html');
+    }
+
+    // [GET] /admin/manage
     index(req,res,next){
         res.sendFile(path.dirname(__dirname) + '/views/admin/index.html');
+    }
+
+    // [POST] /admin/
+    isPassword(req,res,next){
+        let password = req.body.password;
+        if(password === '12332145'){
+            var token = jwt.sign(admin, 'shhhhh',{ expiresIn: 60*30 });
+            res.json({
+                message: 'login success',
+                token: token,
+            })
+        }else{
+            res.status(400).json({message: 'login false'})
+        }
     }
 
     // [GET] /admin/up-home

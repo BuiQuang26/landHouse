@@ -28,7 +28,7 @@
                     <a href="/" class="btn btn-link">Trang chủ</a>/
                     <span class="btn btn-link active">admin</span>
                 </div>
-                <a href="/admin/up-home" class="btn btn-md btn-primary">them nha</a>
+                <a href="/admin/up-home" class="btn btn-md btn-primary" id="btn-add-home">them nha</a>
             </div>
         </div>
         <div class="main-container">
@@ -152,6 +152,10 @@
     </main>
     <form action="" class="form-delete-home"></form>
     <script>
+        const btnAddHome = document.getElementById('btn-add-home');
+        var token = localStorage.getItem('token')
+        btnAddHome.setAttribute('href',"/admin/up-home?token="+token);
+
         const boxCartElement = document.getElementById('tboby-list-home');
 
         var data = {

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/app.css">
+    <link rel="stylesheet" href="../../assets/fontawesome/css/all.css">
+
+    <title>admin</title>
+</head>
+<body>
+    <div class="main-container" id="root">
+        <form class="form-up-home" method="POST" id="form-login">
+            <h3 class="form-heading">LOGIN ADMIN</h3>
+            <div class="form-groupt form-flex-col">
+                <label for="" class="form-label">administrator</label>
+                <input type="password" class="form-input" id="input-password" placeholder="Password..." name="password">
+            </div>
+
+            <button class="btn btn-form">login</button>
+            <div class="clearfix"></div>
+        </form>
+    </div>
+    <script>
+        const formLogin = document.getElementById('form-login');
+        const inputPassword = document.getElementById('input-password');
+        const eleRoot = document.getElementById('root');
+
+        formLogin.onsubmit = function(e){
+            e.preventDefault();
+            var password = inputPassword.value;
+            console.log(password)
+            let formData = new FormData();
+            formData.append('password', password);
+            fetch('/admin/',{
+                method: "POST",
+                method: 'POST',
+                headers: {'Content-Type':'application/x-www-form-urlencoded'}, // this line is important, if this content-type is not set it wont work
+                body: `password=${password}`
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                if(data.token){
+                    localStorage.setItem('token',data.token);
+                    window.location.replace("/admin/manage?token=" + data.token);
+                }
+            })
+        }
+    </script>
+</body>
+</html>

@@ -11,7 +11,7 @@
 <body>
     <div class="main-container">
         <div class="main-box navbar-path">
-            <a href="/admin" class="btn btn-link">admin</a>/
+            <a href="/admin" class="btn btn-link" id="btn-admin">admin</a>/
             <span class="btn btn-link active">thêm nhà</span>
         </div>
     </div>
@@ -62,5 +62,10 @@
             <button class="btn btn-form">Thêm nhà</button>
         </form>
     </div>
+    <script>
+        const btnAdmin = document.getElementById('btn-admin');
+        const token = localStorage.getItem('token');
+        btnAdmin.setAttribute('href',"/admin/manage?token="+token)
+    </script>
 </body>
 </html>

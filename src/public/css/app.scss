@@ -514,6 +514,14 @@ html{
     border-radius: 8px;
 }
 
+.clearfix:after { 
+    content: "."; 
+    visibility: hidden; 
+    display: block; 
+    height: 0; 
+    clear: both;
+ }
+
 .form-flex-col{
     flex-direction: column;
 }
